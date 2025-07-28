@@ -3,6 +3,8 @@
 //     setTimeout(() => { callback(`${filename} is downloaded`) }, 2000);
 // }
 
+
+
 // // function displayMessage(message) {
 // //     console.log(message);
 // // }
@@ -306,48 +308,142 @@
 //     Show a summary at the end.
 
 
-let filenames = ["Stochiastic processes.pdf", "Statistical modelling2",
-    "Non-parametric methods", "Timeseries analysis",
-    "Multivariate analysus", "Big data analysis", "Cloud computing"
-]
+// let filenames = ["Stochiastic processes.pdf", "Statistical modelling2",
+//     "Non-parametric methods", "Timeseries analysis",
+//     "Multivariate analysus", "Big data analysis", "Cloud computing"
+// ]
 
-const downloadFile = (filename) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            let success = Math.random()
-            if (success >= 0.5) {
-                resolve(`${filename} downloaded!!`);
-            } else {
-                reject(`${filename} hasn't been downloaded`)
-            }
-        }, 2000);
-    })
+// const downloadFile = (filename) => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             let success = Math.random()
+//             if (success >= 0.5) {
+//                 resolve(`${filename} downloaded!!`);
+//             } else {
+//                 reject(`${filename} hasn't been downloaded`)
+//             }
+//         }, 2000);
+//     })
 
-}
+// }
 
-const downloadAllFiles = async () => {
-    for (const file of filenames) {
-        try{    
-            const downloaded = await downloadFile(file)
-            console.log(downloaded)
-        }
-        catch(error){
-            console.log(error)
-        }
-
-
-    }
-}
+// const downloadAllFiles = async () => {
+//     for (const file of filenames) {
+//         try{    
+//             const downloaded = await downloadFile(file)
+//             console.log(downloaded)
+//         }
+//         catch(error){
+//             console.log(error)
+//         }
 
 
-downloadAllFiles()
-// filenames.forEach(async (file) => {
-//     try{
-//     files = await downloadFile(file)
-//     console.log(file)
 //     }
-//     catch(error) {)
-//         console.error(error)
-//     }
+// }
+
+
+// downloadAllFiles()
+// // filenames.forEach(async (file) => {
+// //     try{
+// //     files = await downloadFile(file)
+// //     console.log(file)
+// //     }
+// //     catch(error) {)
+// //         console.error(error)
+// //     }
+// // });
+
+
+
+// ======================================================fetch======================================
+
+
+
+// fetch("https://jsonplaceholder.typicode.com/posts/1")
+// .then(response => {
+//     if (!response.ok) throw new Error('Something is wrong');
+//     return response.json();
+// })
+// .then(data => {
+//     console.log("POST:", data);
+// })
+// .catch(error => {
+//     console.error("ERROR:".error);
 // });
+
+// const getPost = async () => {
+//     try {
+//         const response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+//         if (!response.ok) {
+//             throw new Error("Something went wrone....");
+//         }
+//         const post1 = await response.json()
+//         console.log("POST:", post1);
+//     }
+//     catch (error) {
+//         console.error(error);
+//     }
+
+// };
+
+// getPost()
+
+//  Challenge: Fetch Multiple Posts and Display Titles
+
+// ✅ Task: Use the Fetch API with async/await to get the first 5 posts from the API and display only the title of each post in the console.
+// API Endpoint:
+
+// https://jsonplaceholder.typicode.com/posts
+
+
+// const getPosts = async () => {
+//     try {
+//         const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+//         if (!response.ok) {
+//             throw new Error("Something is wrong with the request");
+//         }
+//         const posts = await response.json();
+//         posts.slice(0, 5).forEach(post => {
+//             console.log("post:", post.id, post.title)
+//         });
+//     }
+//     catch (error) {
+//         console.error(error);
+//     }
+// }
+// getPosts()
+// {
+//   "title": "Learn Fetch POST",
+//   "body": "I am learning how to use fetch POST requests.",
+//   "userId": 1
+// }
+
+
+// const createPost = async () => {
+//     try {
+//         const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify({
+//                 title: "Learn Fetch POST",
+//                 body: "I am learning how to use fetch POST requests.",
+//                 userId: 1
+//             })
+//         })
+//         if (!response.ok) {
+//             throw new Error("Something is up with your response");
+//         }
+//         const result = await response.json()
+//         console.log("Successfully posted: ", result);
+//     }
+//     catch (error) {
+//         console.error(error);
+//     }
+// }
+
+// createPost()
+
+
 
